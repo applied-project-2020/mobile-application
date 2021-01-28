@@ -19,12 +19,13 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 import { createStackNavigator } from '@react-navigation/stack';
+import ActivityFeed from '../components/ActivityFeed';
 
 const NotificationScreen = ({navigation}) => {
   return (
     <>
-      <View style={styles.container}>
-      <Text>Notifications</Text>
+      <View style={{backgroundColor:'white'}}>
+        <ActivityFeed/>
       </View>
     </>
   );

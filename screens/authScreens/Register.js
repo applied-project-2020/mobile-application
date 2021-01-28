@@ -1,31 +1,30 @@
 import 'react-native-gesture-handler';
 import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
 import {
+  SafeAreaView,
   StyleSheet,
+  ScrollView,
   View,
-  Button,
-  Text
 } from 'react-native';
+
 import { Appbar } from 'react-native-paper';
 
 const _handleSearch = () => console.log('Searching');
 
-const ReadingScreen = ({navigation}) => {
-    return (
+const RegisterScreen = ({navigation}) => {
+  return (
       <Appbar.Header style={{backgroundColor:'white'}}>
-        <Appbar.BackAction onPress={() => navigation.navigate("Home")} />
-        <Appbar.Content title="Reading List"/>
-        <Appbar.Action icon="magnify" onPress={_handleSearch} />
+        <Appbar.BackAction onPress={() => navigation.navigate("Landing")} />
+        <Appbar.Content title="Join"/>
       </Appbar.Header>
-    );
+  );
 };
 
-export default ReadingScreen
+export default RegisterScreen;
 
 const styles =  StyleSheet.create({
     container:{
         flex: 1,
-        alignItems: 'center',
-        justifyContent:'center',
     }
 })

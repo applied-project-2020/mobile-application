@@ -9,17 +9,16 @@ import{
     Drawer,
     Text,
     TouchableRipple,
-    Switch
+    Switch,
+    useTheme,
 } from 'react-native-paper'
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
+import Icon from 'react-native-vector-icons/Ionicons'
+import App from '../App'
+
 
 export function DrawerContent(props){
 
-    const [isDarkTheme, setIsDarkTheme] = React.useState(false);
-
-    const toggleTheme = () => {
-        setIsDarkTheme(!isDarkTheme);
-    }
+    const paperTheme = useTheme();
 
     return(
         <View style={{flex:1}}>
@@ -35,11 +34,11 @@ export function DrawerContent(props){
                                 size={50}
                             />
                             <View style={{marginLeft:15, flexDirection:'column',}}>
-                                <Title style={styles.title}>Randy Orton</Title>
-                                <Caption style={styles.caption}>@randyorton</Caption>
+                                <Title style={styles.title}>Aaron Moran</Title>
+                                <Caption style={styles.caption}>GMIT</Caption>
                             </View>
                         </View>
-                        <View style={styles.row}>
+                        {/* <View style={styles.row}>
                             <View style={styles.section}>
                                 <Paragraph style={[styles.paragraph, styles.caption]}>80</Paragraph>
                                 <Caption style={ styles.caption}>Following</Caption>
@@ -48,7 +47,7 @@ export function DrawerContent(props){
                                 <Paragraph style={[styles.paragraph, styles.caption]}>10</Paragraph>
                                 <Caption style={ styles.caption}>Following</Caption>
                             </View>
-                        </View>
+                        </View> */}
                     </View>
                     <Text>
                     </Text>
@@ -57,50 +56,62 @@ export function DrawerContent(props){
                         <DrawerItem
                             icon={({color,size}) => (
                                 <Icon
-                                name="exit-to-app"
+                                name="person-circle-outline"
                                 color={color}
-                                size={size}/>
+                                size={25}/>
                             )}
-                            label="Home"
-                            onPress={() => {props.navigation.navigate('Home')}}
+                            label="Profile"
+                            onPress={() => {props.navigation.navigate('UserProfile')}}
                         />
                         <DrawerItem
                             icon={({color,size}) => (
                                 <Icon
-                                name="exit-to-app"
+                                name="calendar-outline"
+                                color={color}
+                                size={size}/>
+                            )}
+                            label="Events"
+                            onPress={() => {props.navigation.navigate('Contributors')}}
+                        />
+                        <DrawerItem
+                        icon={({color,size}) => (
+                            <Icon
+                            name="flash-outline"
+                            color={color}
+                            size={size}/>
+                        )}
+                        label="Forums"
+                        onPress={() => {props.navigation.navigate('Forums')}}
+                        />
+
+                        <DrawerItem
+                            icon={({color,size}) => (
+                                <Icon
+                                name="reader-outline"
+                                color={color}
+                                size={size}/>
+                            )}
+                            label="Listings"
+                            onPress={() => {props.navigation.navigate('Settings')}}
+                        />
+
+                        <DrawerItem
+                            icon={({color,size}) => (
+                                <Icon
+                                name="bookmarks-outline"
                                 color={color}
                                 size={size}/>
                             )}
                             label="Reading List"
                             onPress={() => {props.navigation.navigate('Reading')}}
                         />
-                        <DrawerItem
-                            icon={({color,size}) => (
-                                <Icon
-                                name="exit-to-app"
-                                color={color}
-                                size={size}/>
-                            )}
-                            label="Contributors"
-                            onPress={() => {props.navigation.navigate('Contributors')}}
-                        />
-                        <DrawerItem
-                            icon={({color,size}) => (
-                                <Icon
-                                name="exit-to-app"
-                                color={color}
-                                size={size}/>
-                            )}
-                            label="Account Settings"
-                            onPress={() => {props.navigation.navigate('Settings')}}
-                        />
                     </Drawer.Section>
                     <Drawer.Section>
-                        <TouchableRipple onPress={() => {toggleTheme()}}>
+                        <TouchableRipple onPress={() => {toggledTheme()}}>
                             <View style={styles.preference}>
-                                <Text>Dark Mode</Text>
+                                <Text>Darcula</Text>
                                 <View pointerEvents="none"></View>
-                                <Switch value={isDarkTheme}/>
+                                <Switch value={paperTheme.dark}/>
                             </View>
                         </TouchableRipple>
 
@@ -112,7 +123,7 @@ export function DrawerContent(props){
                 <DrawerItem
                     icon={({color,size}) => (
                         <Icon
-                        name="exit-to-app"
+                        name="log-out-outline"
                         color={color}
                         size={size}/>
                     )}

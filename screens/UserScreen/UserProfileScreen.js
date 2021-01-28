@@ -12,21 +12,23 @@ import { NavigationContainer } from '@react-navigation/native';import {
 } from 'react-native';
 
 import { createStackNavigator } from '@react-navigation/stack';
-import Searchbar from '../components/Searchbar'
-import ExploreItems from '../components/ExploreItems'
+import UserProfile from '../../components/User/UserProfile'
+import { Appbar } from 'react-native-paper';
 
-const ExploreScreen = ({navigation}) => {
+const UserProfileScreen = ({navigation}) => {
   return (
-    <>
       <View style={styles.container}>
-        {/* <Searchbar/> */}
-        <ExploreItems/>
+        <Appbar.Header style={{backgroundColor:'white'}}>
+            <Appbar.BackAction onPress={() => navigation.navigate("Home")} />
+            <Appbar.Content title="Jonjo Shelvey"/>
+            <Appbar.Action icon="magnify" />
+        </Appbar.Header>
+        <UserProfile/>
       </View>
-    </>
   );
 };
 
-export default ExploreScreen;
+export default UserProfileScreen;
 
 const styles =  StyleSheet.create({
     container:{

@@ -10,12 +10,13 @@ import { NavigationContainer } from '@react-navigation/native';import {
   Button,
   TextInput,
 } from 'react-native';
+import Feed from '../components/Feed'
 
 const HomeScreen = ({navigation}) => {
   return (
     <>
       <View style={styles.container}>
-      <Text>Home</Text>
+        <Feed/>
       </View>
     </>
   );
@@ -26,7 +27,5 @@ export default HomeScreen;
 const styles =  StyleSheet.create({
     container:{
         flex: 1,
-        alignItems: 'center',
-        justifyContent:'center',
     }
 })

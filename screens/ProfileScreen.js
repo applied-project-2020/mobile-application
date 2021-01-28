@@ -8,11 +8,13 @@ import {
 } from 'react-native';
 
 import Profile from '../components/Profile'
+import Fab from '../components/CreateFab'
 
 const ProfileScreen = ({navigation}) => {
     return (
       <View style={styles.container}>
         <Profile/>
+        <Fab/>
       </View>
     );
 };

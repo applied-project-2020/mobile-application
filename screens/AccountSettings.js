@@ -6,12 +6,20 @@ import {
   Button,
   Text
 } from 'react-native';
+import Settings from '../components/Settings'
+import { Appbar } from 'react-native-paper';
 
 const AccountSettings = ({navigation}) => {
     return (
-      <View style={styles.container}>
-      <Text>Settings</Text>
-      </View>
+    <View>
+      <Appbar.Header style={{backgroundColor:'white'}}>
+        <Appbar.BackAction onPress={() => navigation.navigate("Home")} />
+        <Appbar.Content title="Settings and Privacy"/>
+      </Appbar.Header>
+
+      <Settings/>
+    </View>
+      
     );
 };
 
@@ -22,5 +30,6 @@ const styles =  StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent:'center',
+
     }
 })

@@ -38,13 +38,13 @@ const Item = ({ title, data, content }) => (
   );
   
 
-export default class Profile extends Component {
+export default class UserProfile extends Component {
 
     render(){
         return(
-        <>
+        <View style={{backgroundColor:'white'}}>
         <ScrollView>
-            <View style={{flexDirection:'row', marginLeft:15, justifyContent:'center',}}>
+            <View style={{flexDirection:'row'}}>
                 <Image
                         style={styles.Avatar}
                         marginTop={50}
@@ -53,27 +53,31 @@ export default class Profile extends Component {
                         borderWidth={1}
                         zIndex={-1}
                         source={{
-                            uri:'https://image-cdn.essentiallysports.com/wp-content/uploads/20200915091809/Untitled-design-2020-09-15T091731.047.png'
-                            }}
+                            uri:'https://resources.premierleague.com/premierleague/photos/players/250x250/p50232.png'
+                        }}
                             size={50}
                             />
             </View>
 
-            <View style={{flexDirection:'row', marginTop:15, marginLeft:15, justifyContent:'center',}}>
-                <Title style={styles.header}>Aaron Moran</Title>
-                <Text style={styles.score}>123</Text>                
+            <View style={{flexDirection:'row', marginTop:15, marginLeft:15,}}>
+                <Title style={styles.header}>Jonjo Shelvey</Title>
+                <Text style={styles.score}>4243</Text>                
             </View>
 
-            <View style={{flexDirection:'row', marginTop:10, marginLeft:15, justifyContent:'center',}}>
-                <Caption style={styles.caption}>Wagwan beez</Caption>
+            <View style={styles.bioContainer}>
+                <View style={styles.bioCaption}>
+                   <Caption style={styles.bioText}>Wagwan beez</Caption> 
+                </View>
+                
             </View>
 
             <View style={styles.container}>
+            <Title style={{fontSize:15, color:'gray',}}>TOP POSTS</Title>  
                 <View style={styles.row}>
                         <View style={styles.section}>
                         <Avatar.Image
                             source={{
-                                uri:'https://image-cdn.essentiallysports.com/wp-content/uploads/20200915091809/Untitled-design-2020-09-15T091731.047.png'
+                                uri:'https://resources.premierleague.com/premierleague/photos/players/250x250/p50232.png'
 
                             }}
                             size={30}
@@ -95,7 +99,7 @@ export default class Profile extends Component {
                     <View style={styles.section}>
                     <Avatar.Image
                         source={{
-                            uri:'https://image-cdn.essentiallysports.com/wp-content/uploads/20200915091809/Untitled-design-2020-09-15T091731.047.png'
+                            uri:'https://resources.premierleague.com/premierleague/photos/players/250x250/p50232.png'
 
                         }}
                         size={30}
@@ -186,7 +190,7 @@ export default class Profile extends Component {
                 />
             </SafeAreaView> */}
             </ScrollView>
-        </>    
+        </View>    
         );
     }
 }
@@ -309,7 +313,7 @@ const styles = StyleSheet.create({
         flexDirection:'row'
     },
     caption:{
-        fontSize: 14,
+        fontSize: 16,
         lineHeight: 14,
         justifyContent:'center',
         flexDirection:'row'
@@ -320,5 +324,26 @@ const styles = StyleSheet.create({
         marginTop:5,
         flexDirection:'row'
 
-    }
+    },
+    bioContainer:{
+      backgroundColor:'whitesmoke',
+      color:'white',
+      fontSize: 14,  
+      flexDirection:'row', 
+      marginTop:10, 
+      alignSelf: 'stretch',
+      marginBottom:20
+    },
+    bioCaption:{
+        marginLeft:25,
+        marginTop:10,
+        marginBottom:10
+    },
+    bioText:{
+        fontSize: 16,
+        lineHeight: 14,
+        justifyContent:'center',
+        flexDirection:'row',
+        color:'gray',
+    },
 })
